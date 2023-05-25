@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41B30843296A6C2D573BD65D /* Pods_ChattingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8139CA0A3543699663A69 /* Pods_ChattingPractice.framework */; };
+		ED9AF9062A1FA0DD00A5ECED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */; };
 		EDF87EB52A1F607E00FA8855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB42A1F607E00FA8855 /* AppDelegate.swift */; };
 		EDF87EB72A1F607E00FA8855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB62A1F607E00FA8855 /* SceneDelegate.swift */; };
 		EDF87EB92A1F607E00FA8855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB82A1F607E00FA8855 /* ViewController.swift */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		753207E1CE9642460CD0BEA4 /* Pods-ChattingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.release.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.release.xcconfig"; sourceTree = "<group>"; };
+		CF116C79794C48878264128C /* Pods-ChattingPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.debug.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDF87EB12A1F607E00FA8855 /* ChattingPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF87EB42A1F607E00FA8855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF87EB62A1F607E00FA8855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		EDF87EBD2A1F607F00FA8855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF87EC02A1F607F00FA8855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF87EC22A1F607F00FA8855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC8139CA0A3543699663A69 /* Pods_ChattingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B30843296A6C2D573BD65D /* Pods_ChattingPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3F3C26DADD9242B6F3EF51A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC8139CA0A3543699663A69 /* Pods_ChattingPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBC5EEB998F9B1B75CA0B19F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF116C79794C48878264128C /* Pods-ChattingPractice.debug.xcconfig */,
+				753207E1CE9642460CD0BEA4 /* Pods-ChattingPractice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDF87EA82A1F607E00FA8855 = {
 			isa = PBXGroup;
 			children = (
 				EDF87EB32A1F607E00FA8855 /* ChattingPractice */,
 				EDF87EB22A1F607E00FA8855 /* Products */,
+				DBC5EEB998F9B1B75CA0B19F /* Pods */,
+				D3F3C26DADD9242B6F3EF51A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 				EDF87EBD2A1F607F00FA8855 /* Assets.xcassets */,
 				EDF87EBF2A1F607F00FA8855 /* LaunchScreen.storyboard */,
 				EDF87EC22A1F607F00FA8855 /* Info.plist */,
+				ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */,
 			);
 			path = ChattingPractice;
 			sourceTree = "<group>";
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF87EC52A1F607F00FA8855 /* Build configuration list for PBXNativeTarget "ChattingPractice" */;
 			buildPhases = (
+				03D6D92AA3CB2649E0165C7A /* [CP] Check Pods Manifest.lock */,
 				EDF87EAD2A1F607E00FA8855 /* Sources */,
 				EDF87EAE2A1F607E00FA8855 /* Frameworks */,
 				EDF87EAF2A1F607E00FA8855 /* Resources */,
+				210BB9918B16CB2E25B75BD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,10 +158,53 @@
 				EDF87EC12A1F607F00FA8855 /* LaunchScreen.storyboard in Resources */,
 				EDF87EBE2A1F607F00FA8855 /* Assets.xcassets in Resources */,
 				EDF87EBC2A1F607E00FA8855 /* Main.storyboard in Resources */,
+				ED9AF9062A1FA0DD00A5ECED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03D6D92AA3CB2649E0165C7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChattingPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		210BB9918B16CB2E25B75BD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDF87EAD2A1F607E00FA8855 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		EDF87EC62A1F607F00FA8855 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF116C79794C48878264128C /* Pods-ChattingPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +384,7 @@
 		};
 		EDF87EC72A1F607F00FA8855 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 753207E1CE9642460CD0BEA4 /* Pods-ChattingPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

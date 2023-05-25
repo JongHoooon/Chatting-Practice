@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>981452161943-pi9r9ocjslnbl6te4234000i8ce6ae23.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.981452161943-pi9r9ocjslnbl6te4234000i8ce6ae23</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCeJrB3fjGxB65QnUhAsT8MWYqp9DMXaKc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>981452161943</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.JongHoon.ChattingPractice</string>
+	<key>PROJECT_ID</key>
+	<string>chattingpractice-26c12</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chattingpractice-26c12.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:981452161943:ios:bd2a2fc22f650d0da5bad2</string>
+</dict>
+</plist>
