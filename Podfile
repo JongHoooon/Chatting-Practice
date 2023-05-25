@@ -8,7 +8,10 @@ target 'ChattingPractice' do
   # Pods for ChattingPractice
 
 pod 'SnapKit'
+
 pod 'Firebase/Core'
 pod 'Firebase/RemoteConfig'
+
+pod 'TextFieldEffects'
 
 end
