@@ -91,6 +91,14 @@ private extension ViewController {
             }))
             
             self.present(alert, animated: true)
+        } else {
+            
+            let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            
+            loginVC.modalPresentationStyle = .fullScreen
+                
+            present(loginVC, animated: true)
+            
         }
         
         view.backgroundColor = UIColor(hex: color ?? "")

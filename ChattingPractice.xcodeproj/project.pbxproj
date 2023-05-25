@@ -11,6 +11,7 @@
 		ED9AF9062A1FA0DD00A5ECED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */; };
 		ED9AF9082A1FAFB600A5ECED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AF9072A1FAFB600A5ECED /* UIColor+Extension.swift */; };
 		ED9AF90A2A1FBF8F00A5ECED /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */; };
+		ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */; };
 		EDF87EB52A1F607E00FA8855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB42A1F607E00FA8855 /* AppDelegate.swift */; };
 		EDF87EB72A1F607E00FA8855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB62A1F607E00FA8855 /* SceneDelegate.swift */; };
 		EDF87EB92A1F607E00FA8855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87EB82A1F607E00FA8855 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED9AF9072A1FAFB600A5ECED /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../../UIColor+Extension.swift"; sourceTree = "<group>"; };
 		ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EDF87EB12A1F607E00FA8855 /* ChattingPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF87EB42A1F607E00FA8855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF87EB62A1F607E00FA8855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				EDF87EB42A1F607E00FA8855 /* AppDelegate.swift */,
 				EDF87EB62A1F607E00FA8855 /* SceneDelegate.swift */,
 				EDF87EB82A1F607E00FA8855 /* ViewController.swift */,
+				ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */,
 				ED9AF9072A1FAFB600A5ECED /* UIColor+Extension.swift */,
 				EDF87EBA2A1F607E00FA8855 /* Main.storyboard */,
 				EDF87EBD2A1F607F00FA8855 /* Assets.xcassets */,
@@ -220,6 +223,7 @@
 				EDF87EB92A1F607E00FA8855 /* ViewController.swift in Sources */,
 				EDF87EB52A1F607E00FA8855 /* AppDelegate.swift in Sources */,
 				EDF87EB72A1F607E00FA8855 /* SceneDelegate.swift in Sources */,
+				ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */,
 				ED9AF9082A1FAFB600A5ECED /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
