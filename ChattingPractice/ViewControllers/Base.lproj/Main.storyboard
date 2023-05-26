@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="1144" y="-35"/>
         </scene>
-        <!--People-->
+        <!--People View Controller-->
         <scene sceneID="wcK-bf-PsS">
             <objects>
                 <viewController storyboardIdentifier="PeopleViewController" id="p1a-AE-Snm" customClass="PeopleViewController" customModule="ChattingPractice" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,11 +125,11 @@
                         <viewLayoutGuide key="safeArea" id="U1S-87-5IA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="People" image="person.2.fill" catalog="system" selectedImage="person.2.fill" id="OqZ-qA-Srg"/>
+                    <navigationItem key="navigationItem" id="CBH-18-ZXK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Mg-O2-Apx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="817"/>
+            <point key="canvasLocation" x="3794.6564885496182" y="816.90140845070425"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="ecm-8X-dtt">
@@ -240,7 +240,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="p1a-AE-Snm" kind="relationship" relationship="viewControllers" id="493-0f-PVS"/>
+                        <segue destination="j81-bk-uQI" kind="relationship" relationship="viewControllers" id="493-0f-PVS"/>
                         <segue destination="6V0-Yj-POp" kind="relationship" relationship="viewControllers" id="fiK-7F-VmQ"/>
                         <segue destination="TNw-La-mXc" kind="relationship" relationship="viewControllers" id="97f-uk-ezu"/>
                     </connections>
@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PP-U6-jSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3873" y="817"/>
+            <point key="canvasLocation" x="4799.2366412213742" y="816.90140845070425"/>
         </scene>
         <!--Account-->
         <scene sceneID="HaQ-l5-MEW">
@@ -279,7 +279,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kz-m0-Ws0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4851" y="817"/>
+            <point key="canvasLocation" x="5776.3358778625952" y="816.90140845070425"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="2lL-HL-bn4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j81-bk-uQI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="People" image="person.2.fill" catalog="system" selectedImage="person.2.fill" id="OqZ-qA-Srg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5im-im-1f9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p1a-AE-Snm" kind="relationship" relationship="rootViewController" id="7zi-w4-7Zh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQg-db-aLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2867.9389312977096" y="816.90140845070425"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="N8a-eo-vG6">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="ul6-q3-TJD" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ChatViewController" id="QmY-Tt-fXp" customClass="ChatViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jJY-Fk-xH1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSX-Vw-GEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866" y="1568"/>
         </scene>
     </scenes>
     <designables>

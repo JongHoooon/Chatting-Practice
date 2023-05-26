@@ -11,6 +11,7 @@
 		ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F8E2A20744E007DB379 /* BaseViewController.swift */; };
 		ED924F912A20AEB4007DB379 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F902A20AEB4007DB379 /* PeopleViewController.swift */; };
 		ED924F942A20F744007DB379 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F932A20F744007DB379 /* UserModel.swift */; };
+		ED924F962A2113D9007DB379 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F952A2113D9007DB379 /* ChatViewController.swift */; };
 		ED9AF9062A1FA0DD00A5ECED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */; };
 		ED9AF90A2A1FBF8F00A5ECED /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */; };
 		ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */; };
@@ -30,6 +31,7 @@
 		ED924F8E2A20744E007DB379 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED924F902A20AEB4007DB379 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		ED924F932A20F744007DB379 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		ED924F952A2113D9007DB379 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */,
 				ED9AF90D2A206EE000A5ECED /* SignupViewController.swift */,
 				ED924F902A20AEB4007DB379 /* PeopleViewController.swift */,
+				ED924F952A2113D9007DB379 /* ChatViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */,
 				ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */,
 				ED924F942A20F744007DB379 /* UserModel.swift in Sources */,
+				ED924F962A2113D9007DB379 /* ChatViewController.swift in Sources */,
 				ED924F912A20AEB4007DB379 /* PeopleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

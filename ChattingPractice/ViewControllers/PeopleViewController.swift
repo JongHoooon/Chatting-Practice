@@ -90,8 +90,8 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
         
         imageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.height.width.equalTo(50.0)
+            $0.leading.equalToSuperview().inset(8.0)
+            $0.height.width.equalTo(52.0)
         }
         
         URLSession.shared.dataTask(
@@ -108,7 +108,7 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addSubview(label)
         label.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(imageView.snp.trailing).offset(30.0)
+            $0.leading.equalTo(imageView.snp.trailing).offset(20.0)
         }
         
         label.text = array[indexPath.row].userName
@@ -120,6 +120,14 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         heightForRowAt indexPath: IndexPath
     ) -> CGFloat {
-        return 50.0
+        return 70.0
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController")
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
