@@ -106,16 +106,115 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="zwm-J8-zEX" id="SS3-Xd-k1V"/>
-                        <outlet property="signinButton" destination="m0X-6F-jkB" id="vJk-Ye-R1H"/>
+                        <outlet property="signupButton" destination="m0X-6F-jkB" id="vJk-Ye-R1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2s-6N-Oj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144" y="-35"/>
         </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="ecm-8X-dtt">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" id="YqP-bD-rxz" customClass="SignupViewController" customModule="ChattingPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UHm-tb-PKE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-3Q-xMu">
+                                <rect key="frame" x="16" y="173.66666666666669" width="361" height="220.66666666666669"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-aO-5Fg" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Wij-6b-xtA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" systemColor="systemRedColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LAW-y7-UOz" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="48" width="361" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Mrh-cM-RN3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" systemColor="systemRedColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-1e-XBk" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="96.000000000000028" width="361" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Qrf-KO-4qH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" systemColor="systemRedColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-vA-HuI">
+                                        <rect key="frame" x="0.0" y="144.00000000000003" width="361" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="회원가입">
+                                            <color key="baseForegroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-hE-4pA">
+                                        <rect key="frame" x="0.0" y="186.33333333333334" width="361" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="취소">
+                                            <color key="baseForegroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ns9-UB-Ubk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bxa-3Q-xMu" firstAttribute="centerY" secondItem="UHm-tb-PKE" secondAttribute="centerY" multiplier="2/3" id="ZTi-bP-afx"/>
+                            <constraint firstItem="Ns9-UB-Ubk" firstAttribute="trailing" secondItem="bxa-3Q-xMu" secondAttribute="trailing" constant="16" id="nc8-ex-HTZ"/>
+                            <constraint firstItem="bxa-3Q-xMu" firstAttribute="leading" secondItem="Ns9-UB-Ubk" secondAttribute="leading" constant="16" id="tuD-lD-PSr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="dt5-hE-4pA" id="AP6-FN-itp"/>
+                        <outlet property="emailTextField" destination="I7W-aO-5Fg" id="pzg-4e-Y4k"/>
+                        <outlet property="nameTextField" destination="LAW-y7-UOz" id="Vmu-E3-beo"/>
+                        <outlet property="passwordTextField" destination="OmT-1e-XBk" id="m8K-AM-G3m"/>
+                        <outlet property="signupButton" destination="j0m-vA-HuI" id="n8s-as-vtK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YjO-Dl-4XW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="689"/>
+        </scene>
     </scenes>
     <designables>
+        <designable name="6tw-7Y-qhN">
+            <size key="intrinsicContentSize" width="48.666666666666664" height="23.666666666666668"/>
+        </designable>
         <designable name="DXv-Xp-POD">
+            <size key="intrinsicContentSize" width="76.666666666666671" height="23.666666666666668"/>
+        </designable>
+        <designable name="I7W-aO-5Fg">
+            <size key="intrinsicContentSize" width="48.666666666666664" height="23.666666666666668"/>
+        </designable>
+        <designable name="LAW-y7-UOz">
+            <size key="intrinsicContentSize" width="52" height="23.666666666666668"/>
+        </designable>
+        <designable name="OmT-1e-XBk">
             <size key="intrinsicContentSize" width="76.666666666666671" height="23.666666666666668"/>
         </designable>
     </designables>

@@ -11,6 +11,8 @@ pod 'SnapKit'
 
 pod 'Firebase/Core'
 pod 'Firebase/RemoteConfig'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 pod 'TextFieldEffects'
 
