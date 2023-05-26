@@ -54,7 +54,7 @@ final class LoginViewController: BaseViewController {
             guard let self = self else { return }
             
             if let _ = user {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
                 vc.modalPresentationStyle = .fullScreen
                 
                 self.present(vc, animated: true)
