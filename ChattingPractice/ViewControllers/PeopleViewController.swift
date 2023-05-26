@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FirebaseDatabase
+import FirebaseAuth
 
 final class PeopleViewController: BaseViewController {
     
@@ -42,17 +43,18 @@ final class PeopleViewController: BaseViewController {
                 
                 self.array.removeAll()
                 
+                let myUid = Auth.auth().currentUser?.uid ?? ""
+                
                 for child in snapShot.children {
                     let fchild = child as! DataSnapshot
                     let userModel = UserModel()
                     
-                    print("----------------------")
-                    print(fchild)
-                    print(fchild)
-                    print(fchild)
-                    print(fchild)
-                    
                     userModel.setValuesForKeys(fchild.value as! [String: Any])
+                    
+                    if userModel.uid == myUid {
+                        continue
+                    }
+                    
                     self.array.append(userModel)
                 }
                 

@@ -313,7 +313,6 @@
                                 <rect key="frame" x="302" y="783" width="75" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="0Ao-9d-QhD"/>
-                                    <constraint firstAttribute="width" constant="75" id="z0r-5U-Szx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="전송"/>
@@ -327,20 +326,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mp6-WZ-oCJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="70" id="QeL-fe-XKC">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QeL-fe-XKC" id="ZLE-WA-udI">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ul6-q3-TJD" id="27t-eu-UA7"/>
+                                    <outlet property="delegate" destination="ul6-q3-TJD" id="JhC-cK-O31"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jJY-Fk-xH1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="N1P-im-CHS" firstAttribute="top" secondItem="mp6-WZ-oCJ" secondAttribute="bottom" constant="8" symbolic="YES" id="6Bu-mh-2rE"/>
                             <constraint firstItem="0cg-HG-xZh" firstAttribute="leading" secondItem="jJY-Fk-xH1" secondAttribute="leading" constant="16" id="8vA-Kt-rhl"/>
                             <constraint firstItem="jJY-Fk-xH1" firstAttribute="trailing" secondItem="N1P-im-CHS" secondAttribute="trailing" constant="16" id="G1R-z7-Hqt"/>
                             <constraint firstItem="N1P-im-CHS" firstAttribute="leading" secondItem="0cg-HG-xZh" secondAttribute="trailing" constant="8" symbolic="YES" id="JtE-US-ZgL"/>
                             <constraint firstItem="N1P-im-CHS" firstAttribute="bottom" secondItem="jJY-Fk-xH1" secondAttribute="bottom" id="Zyy-1C-Px2"/>
+                            <constraint firstItem="mp6-WZ-oCJ" firstAttribute="top" secondItem="jJY-Fk-xH1" secondAttribute="top" id="aqi-ZZ-V5A"/>
                             <constraint firstItem="0cg-HG-xZh" firstAttribute="bottom" secondItem="jJY-Fk-xH1" secondAttribute="bottom" id="bVE-bB-LSX"/>
+                            <constraint firstAttribute="trailing" secondItem="mp6-WZ-oCJ" secondAttribute="trailing" id="oqT-QS-zbs"/>
+                            <constraint firstItem="mp6-WZ-oCJ" firstAttribute="leading" secondItem="jJY-Fk-xH1" secondAttribute="leading" id="pPH-fa-Li5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="messageTextField" destination="0cg-HG-xZh" id="8Cm-Wa-hBs"/>
                         <outlet property="sendButton" destination="N1P-im-CHS" id="5Wp-Ij-g6q"/>
+                        <outlet property="tableView" destination="mp6-WZ-oCJ" id="QOG-C9-ti2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSX-Vw-GEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
