@@ -127,7 +127,8 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController")
-        navigationController?.pushViewController(vc!, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        vc.destinationUid = array[indexPath.row].uid
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

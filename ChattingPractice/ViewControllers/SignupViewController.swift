@@ -134,7 +134,8 @@ private extension SignupViewController {
                                     .child(uid)
                                     .setValue([
                                         "userName": self.nameTextField.text ?? "",
-                                        "profileImageUrl": imageURL
+                                        "profileImageUrl": imageURL,
+                                        "uid": Auth.auth().currentUser?.uid ?? ""
                                     ])
                             })
                         })

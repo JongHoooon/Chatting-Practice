@@ -236,6 +236,7 @@
                 <tabBarController storyboardIdentifier="MainViewTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="pMt-mQ-seD" customClass="MainViewTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OMJ-S4-9a8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -303,17 +304,48 @@
         <!--Chat View Controller-->
         <scene sceneID="N8a-eo-vG6">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="ul6-q3-TJD" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="ul6-q3-TJD" customClass="ChatViewController" customModule="ChattingPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ChatViewController" id="QmY-Tt-fXp" customClass="ChatViewController">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1P-im-CHS">
+                                <rect key="frame" x="302" y="783" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0Ao-9d-QhD"/>
+                                    <constraint firstAttribute="width" constant="75" id="z0r-5U-Szx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="전송"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cg-HG-xZh">
+                                <rect key="frame" x="16" y="784" width="278" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="WsZ-W5-Vbo"/>
+                                    <constraint firstAttribute="height" constant="34" id="cOH-Tr-0dy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jJY-Fk-xH1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0cg-HG-xZh" firstAttribute="leading" secondItem="jJY-Fk-xH1" secondAttribute="leading" constant="16" id="8vA-Kt-rhl"/>
+                            <constraint firstItem="jJY-Fk-xH1" firstAttribute="trailing" secondItem="N1P-im-CHS" secondAttribute="trailing" constant="16" id="G1R-z7-Hqt"/>
+                            <constraint firstItem="N1P-im-CHS" firstAttribute="leading" secondItem="0cg-HG-xZh" secondAttribute="trailing" constant="8" symbolic="YES" id="JtE-US-ZgL"/>
+                            <constraint firstItem="N1P-im-CHS" firstAttribute="bottom" secondItem="jJY-Fk-xH1" secondAttribute="bottom" id="Zyy-1C-Px2"/>
+                            <constraint firstItem="0cg-HG-xZh" firstAttribute="bottom" secondItem="jJY-Fk-xH1" secondAttribute="bottom" id="bVE-bB-LSX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="0cg-HG-xZh" id="8Cm-Wa-hBs"/>
+                        <outlet property="sendButton" destination="N1P-im-CHS" id="5Wp-Ij-g6q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSX-Vw-GEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="1568"/>
+            <point key="canvasLocation" x="2864.8854961832062" y="1567.605633802817"/>
         </scene>
     </scenes>
     <designables>

@@ -8,7 +8,8 @@
 import Foundation
 
 @objcMembers
-class UserModel: NSObject {
+final class UserModel: NSObject {
     var profileImageUrl: String?
     var userName: String?
+    var uid: String?
 }
