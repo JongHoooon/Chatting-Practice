@@ -138,12 +138,6 @@ private extension SignupViewController {
                                     ])
                             })
                         })
-                
-                Database
-                    .database()
-                    .reference()
-                    .child(uid)
-                    .setValue(["name": self.nameTextField.text ?? ""])
             }
         )
     }
