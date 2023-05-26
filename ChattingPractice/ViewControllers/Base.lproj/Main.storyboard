@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-3Q-xMu">
-                                <rect key="frame" x="16" y="173.66666666666669" width="361" height="220.66666666666669"/>
+                                <rect key="frame" x="16" y="315.66666666666669" width="361" height="220.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-aO-5Fg" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
@@ -151,7 +151,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-1e-XBk" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="96.000000000000028" width="361" height="40"/>
+                                        <rect key="frame" x="0.0" y="96" width="361" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Qrf-KO-4qH"/>
                                         </constraints>
@@ -164,14 +164,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-vA-HuI">
-                                        <rect key="frame" x="0.0" y="144.00000000000003" width="361" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="144" width="361" height="34.333333333333343"/>
+                                        <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="회원가입">
                                             <color key="baseForegroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-hE-4pA">
-                                        <rect key="frame" x="0.0" y="186.33333333333334" width="361" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="186.33333333333331" width="361" height="34.333333333333343"/>
+                                        <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="취소">
                                             <color key="baseForegroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,11 +181,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_photo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7bb-sD-oyz">
+                                <rect key="frame" x="146.66666666666666" y="150" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7dI-EQ-F7s"/>
+                                    <constraint firstAttribute="width" constant="100" id="h5E-yL-VMW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ns9-UB-Ubk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bxa-3Q-xMu" firstAttribute="centerY" secondItem="UHm-tb-PKE" secondAttribute="centerY" multiplier="2/3" id="ZTi-bP-afx"/>
+                            <constraint firstItem="7bb-sD-oyz" firstAttribute="centerX" secondItem="UHm-tb-PKE" secondAttribute="centerX" id="FvD-na-XJG"/>
+                            <constraint firstItem="bxa-3Q-xMu" firstAttribute="top" secondItem="7bb-sD-oyz" secondAttribute="bottom" constant="65.666666666666686" id="P02-Ko-sTV"/>
+                            <constraint firstItem="bxa-3Q-xMu" firstAttribute="centerY" secondItem="UHm-tb-PKE" secondAttribute="centerY" id="ZTi-bP-afx"/>
                             <constraint firstItem="Ns9-UB-Ubk" firstAttribute="trailing" secondItem="bxa-3Q-xMu" secondAttribute="trailing" constant="16" id="nc8-ex-HTZ"/>
                             <constraint firstItem="bxa-3Q-xMu" firstAttribute="leading" secondItem="Ns9-UB-Ubk" secondAttribute="leading" constant="16" id="tuD-lD-PSr"/>
                         </constraints>
@@ -191,6 +202,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="dt5-hE-4pA" id="AP6-FN-itp"/>
                         <outlet property="emailTextField" destination="I7W-aO-5Fg" id="pzg-4e-Y4k"/>
+                        <outlet property="imageView" destination="7bb-sD-oyz" id="yhI-id-oOU"/>
                         <outlet property="nameTextField" destination="LAW-y7-UOz" id="Vmu-E3-beo"/>
                         <outlet property="passwordTextField" destination="OmT-1e-XBk" id="m8K-AM-G3m"/>
                         <outlet property="signupButton" destination="j0m-vA-HuI" id="n8s-as-vtK"/>
@@ -219,6 +231,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="add_photo_icon" width="512" height="512"/>
         <image name="loading_icon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
