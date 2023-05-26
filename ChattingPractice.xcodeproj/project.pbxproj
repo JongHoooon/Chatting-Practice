@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		41B30843296A6C2D573BD65D /* Pods_ChattingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8139CA0A3543699663A69 /* Pods_ChattingPractice.framework */; };
 		ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F8E2A20744E007DB379 /* BaseViewController.swift */; };
+		ED924F912A20AEB4007DB379 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F902A20AEB4007DB379 /* MainViewController.swift */; };
 		ED9AF9062A1FA0DD00A5ECED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */; };
 		ED9AF90A2A1FBF8F00A5ECED /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */; };
 		ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */; };
@@ -26,6 +27,7 @@
 		753207E1CE9642460CD0BEA4 /* Pods-ChattingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.release.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.release.xcconfig"; sourceTree = "<group>"; };
 		CF116C79794C48878264128C /* Pods-ChattingPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.debug.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		ED924F8E2A20744E007DB379 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED924F902A20AEB4007DB379 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ED9AF9052A1FA0DD00A5ECED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED9AF9092A1FBF8F00A5ECED /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				EDF87EB82A1F607E00FA8855 /* ViewController.swift */,
 				ED9AF90B2A1FC81900A5ECED /* LoginViewController.swift */,
 				ED9AF90D2A206EE000A5ECED /* SignupViewController.swift */,
+				ED924F902A20AEB4007DB379 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				EDF87EB72A1F607E00FA8855 /* SceneDelegate.swift in Sources */,
 				ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */,
 				ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */,
+				ED924F912A20AEB4007DB379 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

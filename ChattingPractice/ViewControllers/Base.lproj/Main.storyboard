@@ -105,13 +105,30 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="6tw-7Y-qhN" id="KsJ-uD-dfl"/>
                         <outlet property="loginButton" destination="zwm-J8-zEX" id="SS3-Xd-k1V"/>
+                        <outlet property="passwordTextField" destination="DXv-Xp-POD" id="zG0-3a-c1v"/>
                         <outlet property="signupButton" destination="m0X-6F-jkB" id="vJk-Ye-R1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2s-6N-Oj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144" y="-35"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="wcK-bf-PsS">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="p1a-AE-Snm" customClass="MainViewController" customModule="ChattingPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hbx-uy-8SE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="U1S-87-5IA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mg-O2-Apx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285" y="-35"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="ecm-8X-dtt">

@@ -7,8 +7,12 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 final class LoginViewController: BaseViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
@@ -17,6 +21,7 @@ final class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        try? Auth.auth().signOut()
         configure()
     }
     
@@ -32,17 +37,65 @@ final class LoginViewController: BaseViewController {
     }
     
     override func setAction() {
+        
+        loginButton.addTarget(
+            self,
+            action: #selector(loginEvent),
+            for: .touchUpInside
+        )
+        
         signupButton.addTarget(
             self,
             action: #selector(presentSignup),
             for: .touchUpInside
         )
+        
+        Auth.auth().addStateDidChangeListener({ [weak self] auth, user in
+            guard let self = self else { return }
+            
+            if let _ = user {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                vc.modalPresentationStyle = .fullScreen
+                
+                self.present(vc, animated: true)
+            }
+        })
     }
 }
 
 // MARK: - action
 
 private extension LoginViewController {
+    
+    @objc
+    func loginEvent() {
+        Auth.auth().signIn(
+            withEmail: emailTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            completion: { [weak self] result, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    let alert = UIAlertController(
+                        title: "error",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(
+                        UIAlertAction(
+                            title: "확인",
+                            style: .default
+                        ))
+                    
+                    self.present(alert, animated: true)
+                    return
+                }
+                
+                
+            }
+        )
+        
+    }
     
     @objc
     func presentSignup() {
