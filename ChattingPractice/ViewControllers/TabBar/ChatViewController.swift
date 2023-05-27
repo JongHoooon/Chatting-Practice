@@ -184,11 +184,6 @@ private extension ChatViewController {
         notificationModel.notification.title = "보낸이 아이디"
         notificationModel.notification.text = messageTextField.text ?? ""
         
-        print("------------------------")
-        print(notificationModel.to)
-        print(notificationModel.notification.title)
-        print(notificationModel.notification.text)
-        
         let params = notificationModel.toJSON()
         
         AF.request(
