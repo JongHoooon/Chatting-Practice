@@ -13,6 +13,7 @@
 		ED5A05DF2A21F1BB007C46D3 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A05DE2A21F1BB007C46D3 /* ChatListCell.swift */; };
 		ED7573A02A213E2700985F4E /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75739F2A213E2700985F4E /* MyMessageCell.swift */; };
 		ED7573A22A213E5100985F4E /* DestinationMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7573A12A213E5100985F4E /* DestinationMessageCell.swift */; };
+		ED90F0EB2A220BF00035EC33 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90F0EA2A220BF00035EC33 /* Int+Extension.swift */; };
 		ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F8E2A20744E007DB379 /* BaseViewController.swift */; };
 		ED924F912A20AEB4007DB379 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F902A20AEB4007DB379 /* PeopleViewController.swift */; };
 		ED924F942A20F744007DB379 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F932A20F744007DB379 /* UserModel.swift */; };
@@ -39,6 +40,7 @@
 		ED5A05DE2A21F1BB007C46D3 /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		ED75739F2A213E2700985F4E /* MyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
 		ED7573A12A213E5100985F4E /* DestinationMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMessageCell.swift; sourceTree = "<group>"; };
+		ED90F0EA2A220BF00035EC33 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		ED924F8E2A20744E007DB379 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED924F902A20AEB4007DB379 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		ED924F932A20F744007DB379 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				ED9AF9132A206F2E00A5ECED /* UIColor+Extension.swift */,
+				ED90F0EA2A220BF00035EC33 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				ED9AF90E2A206EE000A5ECED /* SignupViewController.swift in Sources */,
 				ED5A05DD2A21EE6B007C46D3 /* ChatRoomsViewController.swift in Sources */,
 				EDF87EB92A1F607E00FA8855 /* ViewController.swift in Sources */,
+				ED90F0EB2A220BF00035EC33 /* Int+Extension.swift in Sources */,
 				ED924F982A2116BB007DB379 /* ChatModel.swift in Sources */,
 				EDF87EB52A1F607E00FA8855 /* AppDelegate.swift in Sources */,
 				ED9AF9142A206F2E00A5ECED /* UIColor+Extension.swift in Sources */,

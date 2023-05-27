@@ -139,13 +139,13 @@ private extension ChatViewController {
                             return
                         }
                         self.checkChatRoom()
-                        
                     }
                 )
         } else {
             let value: [String: Any] = [
                     "uid": uid,
-                    "message": messageTextField.text ?? ""
+                    "message": messageTextField.text ?? "",
+                    "timeStamp": ServerValue.timestamp()
             ]
             
             Database.database().reference()
@@ -263,6 +263,8 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             cell.messageLabel.text = comment.message
             cell.messageLabel.numberOfLines = 0
             
+            cell.timeStampLabel.text = comment.timeStamp?.toDayTime
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(
@@ -289,6 +291,8 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             let comment = comments[indexPath.row]
             cell.messageLabel.text = comment.message
             cell.messageLabel.numberOfLines = 0
+            
+            cell.timeStampLabel.text = comment.timeStamp?.toDayTime
             
             return cell
         }

@@ -23,7 +23,7 @@ final class ChatRoomsViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewDidLoad()
+        getChatRoomsList()
     }
     
     override func configure() {
@@ -31,12 +31,7 @@ final class ChatRoomsViewController: BaseViewController {
             ChatListCell.self,
             forCellReuseIdentifier: "ChatListCell"
         )
-        
-        getChatRoomsList()
-        
-        
     }
-    
 }
 
 private extension ChatRoomsViewController {
