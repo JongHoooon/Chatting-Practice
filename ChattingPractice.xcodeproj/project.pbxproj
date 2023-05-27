@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		41B30843296A6C2D573BD65D /* Pods_ChattingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8139CA0A3543699663A69 /* Pods_ChattingPractice.framework */; };
+		ED5A05DA2A21D7B5007C46D3 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A05D92A21D7B5007C46D3 /* PeopleTableViewCell.swift */; };
+		ED7573A02A213E2700985F4E /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75739F2A213E2700985F4E /* MyMessageCell.swift */; };
+		ED7573A22A213E5100985F4E /* DestinationMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7573A12A213E5100985F4E /* DestinationMessageCell.swift */; };
 		ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F8E2A20744E007DB379 /* BaseViewController.swift */; };
 		ED924F912A20AEB4007DB379 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F902A20AEB4007DB379 /* PeopleViewController.swift */; };
 		ED924F942A20F744007DB379 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED924F932A20F744007DB379 /* UserModel.swift */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		753207E1CE9642460CD0BEA4 /* Pods-ChattingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.release.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.release.xcconfig"; sourceTree = "<group>"; };
 		CF116C79794C48878264128C /* Pods-ChattingPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingPractice.debug.xcconfig"; path = "Target Support Files/Pods-ChattingPractice/Pods-ChattingPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		ED5A05D92A21D7B5007C46D3 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		ED75739F2A213E2700985F4E /* MyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
+		ED7573A12A213E5100985F4E /* DestinationMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMessageCell.swift; sourceTree = "<group>"; };
 		ED924F8E2A20744E007DB379 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED924F902A20AEB4007DB379 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		ED924F932A20F744007DB379 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -79,6 +85,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED5A05D82A21D79B007C46D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED75739F2A213E2700985F4E /* MyMessageCell.swift */,
+				ED7573A12A213E5100985F4E /* DestinationMessageCell.swift */,
+				ED5A05D92A21D7B5007C46D3 /* PeopleTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ED924F922A20F724007DB379 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +114,7 @@
 				ED9AF90D2A206EE000A5ECED /* SignupViewController.swift */,
 				ED924F902A20AEB4007DB379 /* PeopleViewController.swift */,
 				ED924F952A2113D9007DB379 /* ChatViewController.swift */,
+				ED5A05D82A21D79B007C46D3 /* Views */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -276,9 +293,12 @@
 				EDF87EB52A1F607E00FA8855 /* AppDelegate.swift in Sources */,
 				ED9AF9142A206F2E00A5ECED /* UIColor+Extension.swift in Sources */,
 				EDF87EB72A1F607E00FA8855 /* SceneDelegate.swift in Sources */,
+				ED5A05DA2A21D7B5007C46D3 /* PeopleTableViewCell.swift in Sources */,
+				ED7573A22A213E5100985F4E /* DestinationMessageCell.swift in Sources */,
 				ED924F8F2A20744E007DB379 /* BaseViewController.swift in Sources */,
 				ED9AF90C2A1FC81900A5ECED /* LoginViewController.swift in Sources */,
 				ED924F942A20F744007DB379 /* UserModel.swift in Sources */,
+				ED7573A02A213E2700985F4E /* MyMessageCell.swift in Sources */,
 				ED924F962A2113D9007DB379 /* ChatViewController.swift in Sources */,
 				ED924F912A20AEB4007DB379 /* PeopleViewController.swift in Sources */,
 			);

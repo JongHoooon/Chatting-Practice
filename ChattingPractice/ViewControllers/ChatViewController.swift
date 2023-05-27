@@ -17,6 +17,9 @@ final class ChatViewController: BaseViewController {
     var uid: String = Auth.auth().currentUser?.uid ?? ""
     var chatRoomUid: String?
     var comments: [Comment] = []
+    var userModel: UserModel?
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
@@ -25,6 +28,37 @@ final class ChatViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkChatRoom()
+        
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func setView() {
+        tableView.separatorStyle = .none
     }
     
     override func setAction() {
@@ -33,10 +67,52 @@ final class ChatViewController: BaseViewController {
             action: #selector(createRoom),
             for: .touchUpInside
         )
+        
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        view.addGestureRecognizer(tap)
     }
 }
 
 private extension ChatViewController {
+    
+    @objc
+    func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            bottomConstraint.constant = -keyboardSize.height
+            
+            UIView.animate(
+                withDuration: 0,
+                animations: { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.view.layoutIfNeeded()
+                },
+                completion: { _ in
+                    if self.comments.count > 0 {
+                        self.tableView.scrollToRow(
+                            at: IndexPath(row: self.comments.count - 1, section: 0),
+                            at: .bottom,
+                            animated: false
+                        )
+                    }
+                })
+        }
+    }
+    
+    @objc
+    func keyboardWillHide(notification: Notification) {
+        bottomConstraint.constant = 0
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
     
     @objc
     func createRoom() {
@@ -77,7 +153,17 @@ private extension ChatViewController {
                 .child(chatRoomUid ?? "")
                 .child("comments")
                 .childByAutoId()
-                .setValue(value)
+                .setValue(
+                    value,
+                    withCompletionBlock: { [weak self] error, ref in
+                        guard let self = self else { return }
+                        guard error == nil else {
+                            print(error.debugDescription)
+                            return
+                        }
+                        
+                        self.messageTextField.text = ""
+                })
         }
         
     }
@@ -101,12 +187,27 @@ private extension ChatViewController {
                             if chatModel?.users[self.destinationUid ?? ""] == true {
                                 self.chatRoomUid = item.key
                                 self.sendButton.isEnabled = true
-                                self.getMessageList()
+                                self.getDestinationInfo()
                             }
                         }
                         
                     }
                 })
+    }
+    
+    func getDestinationInfo() {
+        Database.database().reference()
+            .child("users")
+            .child(destinationUid ?? "")
+            .observeSingleEvent(
+                of: .value,
+                with: { [weak self] dataSnapshot in
+                    guard let self = self else { return }
+                
+                    self.userModel = UserModel()
+                    self.userModel?.setValuesForKeys(dataSnapshot.value as! [String: Any])
+                    self.getMessageList()
+            })
     }
     
     func getMessageList() {
@@ -126,6 +227,14 @@ private extension ChatViewController {
                     }
                 }
                 self.tableView.reloadData()
+                
+                if self.comments.count > 0 {
+                    self.tableView.scrollToRow(
+                        at: IndexPath(row: self.comments.count - 1, section: 0),
+                        at: .bottom,
+                        animated: false
+                    )
+                }
             })
     }
 }
@@ -143,12 +252,54 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "MessageCell",
-            for: indexPath
-        )
-        cell.textLabel?.text = comments[indexPath.row].message
         
-        return cell
+        if comments[indexPath.row].uid == uid {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "MyMessageCell",
+                for: indexPath
+            ) as! MyMessageCell
+            
+            let comment = comments[indexPath.row]
+            cell.messageLabel.text = comment.message
+            cell.messageLabel.numberOfLines = 0
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "DestinationMessageCell",
+                for: indexPath
+            ) as! DestinationMessageCell
+            
+            cell.nameLabel.text = userModel?.userName
+            
+            
+            
+            let url = URL(string: userModel?.profileImageUrl ?? "")
+            URLSession.shared.dataTask(with: url!, completionHandler: { data, _, error in
+                
+                DispatchQueue.main.async {
+                    cell.profileImageVIew.image = UIImage(data: data ?? Data())
+                }
+            })
+            .resume()
+            
+            cell.profileImageVIew.layer.cornerRadius = cell.profileImageVIew.frame.width / 2
+            cell.profileImageVIew.clipsToBounds = true
+            
+            let comment = comments[indexPath.row]
+            cell.messageLabel.text = comment.message
+            cell.messageLabel.numberOfLines = 0
+            
+            return cell
+        }
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
+
+

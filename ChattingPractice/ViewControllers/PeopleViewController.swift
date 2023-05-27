@@ -24,8 +24,8 @@ final class PeopleViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
-            UITableViewCell.self,
-            forCellReuseIdentifier: "Cell"
+            PeopleTableViewCell.self,
+            forCellReuseIdentifier: "PeopleTableViewCell"
         )
         view.addSubview(tableView)
         
@@ -81,16 +81,14 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
     ) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "Cell",
+            withIdentifier: "PeopleTableViewCell",
             for: indexPath
-        )
+        ) as! PeopleTableViewCell
         
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 50.0 / 2
-        imageView.clipsToBounds = true
-        cell.addSubview(imageView)
-        
-        imageView.snp.makeConstraints {
+        cell.profileImageView.layer.cornerRadius = 52.0 / 2
+        cell.profileImageView.clipsToBounds = true
+
+        cell.profileImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(8.0)
             $0.height.width.equalTo(52.0)
@@ -100,20 +98,19 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
             with: URL(string: array[indexPath.row].profileImageUrl ?? "")!,
             completionHandler: { data, response, error in
                 DispatchQueue.main.async {
-                    imageView.image = UIImage(data: data ?? Data())
+                    cell.profileImageView.image = UIImage(data: data ?? Data())
                 }
             }
         )
         .resume()
         
-        let label = UILabel()
-        cell.addSubview(label)
-        label.snp.makeConstraints {
+        
+        cell.label.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(imageView.snp.trailing).offset(20.0)
+            $0.leading.equalTo(cell.profileImageView.snp.trailing).offset(20.0)
         }
         
-        label.text = array[indexPath.row].userName
+        cell.label.text = array[indexPath.row].userName
         
         return cell
     }
@@ -129,6 +126,8 @@ extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         vc.destinationUid = array[indexPath.row].uid
         navigationController?.pushViewController(vc, animated: true)
