@@ -20,8 +20,21 @@ final class ChatRoomsViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewDidLoad()
+    }
+    
     override func configure() {
+        tableView.register(
+            ChatListCell.self,
+            forCellReuseIdentifier: "ChatListCell"
+        )
+        
         getChatRoomsList()
+        
+        
     }
     
 }
@@ -30,6 +43,7 @@ private extension ChatRoomsViewController {
     
     func getChatRoomsList() {
         
+        chatRooms.removeAll()
         Database.database().reference()
             .child("chatRooms")
             .queryOrdered(byChild: "users/"+uid)
@@ -61,12 +75,51 @@ extension ChatRoomsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "RowCell",
+            withIdentifier: "ChatListCell",
             for: indexPath
-        )
+        ) as! ChatListCell
+        
+        var destinationUid: String = ""
+        
+        for item in chatRooms[indexPath.row].users {
+            if item.key != uid {
+                destinationUid = item.key
+            }
+        }
+        
+        Database.database().reference()
+            .child("users")
+            .child(destinationUid)
+            .observeSingleEvent(of: .value, with: { [weak self] dataSnapshot in
+                guard let self = self else { return }
+                
+                let userModel = UserModel()
+                userModel.setValuesForKeys(dataSnapshot.value as! [String: AnyObject])
+                
+                cell.titleLabel.text = userModel.userName
+                
+                if let url = URL(string: userModel.profileImageUrl ?? "") {
+                    URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+                        
+                        DispatchQueue.main.async {
+                            cell.profileImageView.image = UIImage(data: data ?? Data())
+                        }
+                    })
+                    .resume()
+                    
+                    let lastMessageKey = self.chatRooms[indexPath.row].comments.keys.sorted(by: >)
+                    cell.lastMessageLabel.text = self.chatRooms[indexPath.row].comments[lastMessageKey[0]]?.message
+                    
+                }
+            })
         
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
+    }
 }
+
+
