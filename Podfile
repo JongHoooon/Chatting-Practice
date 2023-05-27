@@ -7,6 +7,8 @@ target 'ChattingPractice' do
 
   # Pods for ChattingPractice
 
+pod 'Alamofire'
+
 pod 'SnapKit'
 
 pod 'Firebase/Core'
@@ -14,6 +16,8 @@ pod 'Firebase/RemoteConfig'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/Messaging'
+
 pod 'ObjectMapper'
 
 pod 'TextFieldEffects'

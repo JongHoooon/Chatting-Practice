@@ -25,6 +25,16 @@ final class ChatListCell: UITableViewCell {
 
     let lastMessageLabel: UILabel = {
         let label = UILabel()
+        label.font = .systemFont(ofSize: 10.0)
+        label.textColor = .gray
+
+        return label
+    }()
+    
+    let timeStampLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10.0)
+        label.textColor = .gray
 
         return label
     }()
@@ -42,7 +52,7 @@ final class ChatListCell: UITableViewCell {
     private func configureLayout() {
         [
             profileImageView,
-            titleLabel,
+            titleLabel, timeStampLabel,
             lastMessageLabel
         ].forEach { contentView.addSubview($0) }
 
@@ -60,6 +70,12 @@ final class ChatListCell: UITableViewCell {
         lastMessageLabel.snp.makeConstraints {
             $0.bottom.equalTo(profileImageView)
             $0.leading.equalTo(profileImageView.snp.trailing).offset(8.0)
+            $0.trailing.equalToSuperview().inset(16.0)
+        }
+        
+        timeStampLabel.snp.makeConstraints {
+            $0.top.centerY.equalTo(titleLabel)
+            $0.trailing.equalToSuperview().inset(8.0)
         }
     }
 }

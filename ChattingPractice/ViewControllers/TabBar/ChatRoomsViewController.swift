@@ -13,6 +13,7 @@ final class ChatRoomsViewController: BaseViewController {
     
     let uid = Auth.auth().currentUser?.uid ?? ""
     var chatRooms: [ChatModel] = []
+    var destinationUsers: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -63,11 +64,17 @@ private extension ChatRoomsViewController {
 }
 
 extension ChatRoomsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return chatRooms.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "ChatListCell",
@@ -79,6 +86,7 @@ extension ChatRoomsViewController: UITableViewDelegate, UITableViewDataSource {
         for item in chatRooms[indexPath.row].users {
             if item.key != uid {
                 destinationUid = item.key
+                destinationUsers.append(destinationUid)
             }
         }
         
@@ -105,11 +113,27 @@ extension ChatRoomsViewController: UITableViewDelegate, UITableViewDataSource {
                     let lastMessageKey = self.chatRooms[indexPath.row].comments.keys.sorted(by: >)
                     cell.lastMessageLabel.text = self.chatRooms[indexPath.row].comments[lastMessageKey[0]]?.message
                     
+                    let unixTime = self.chatRooms[indexPath.row].comments[lastMessageKey[0]]?.timeStamp
+                    
+                    cell.timeStampLabel.text = unixTime?.toDayTime
                 }
             })
         
         
         return cell
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let destinationUid = destinationUsers[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        vc.destinationUid = destinationUid
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

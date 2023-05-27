@@ -242,7 +242,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="j81-bk-uQI" kind="relationship" relationship="viewControllers" id="493-0f-PVS"/>
-                        <segue destination="6V0-Yj-POp" kind="relationship" relationship="viewControllers" id="fiK-7F-VmQ"/>
+                        <segue destination="Lo1-5x-ISu" kind="relationship" relationship="viewControllers" id="fiK-7F-VmQ"/>
                         <segue destination="TNw-La-mXc" kind="relationship" relationship="viewControllers" id="97f-uk-ezu"/>
                     </connections>
                 </tabBarController>
@@ -250,7 +250,7 @@
             </objects>
             <point key="canvasLocation" x="3873" y="-35"/>
         </scene>
-        <!--Chat-->
+        <!--Chat Rooms View Controller-->
         <scene sceneID="EAe-bo-3zU">
             <objects>
                 <viewController id="6V0-Yj-POp" customClass="ChatRoomsViewController" customModule="ChattingPractice" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,7 +259,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-jK-WPI">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatListCell" rowHeight="70" id="fhV-ug-wby" customClass="ChatListCell" customModule="ChattingPractice" customModuleProvider="target">
@@ -286,14 +286,14 @@
                             <constraint firstItem="HUL-jK-WPI" firstAttribute="leading" secondItem="hpd-Y5-dbb" secondAttribute="leading" id="cad-Jo-kSQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="doc.append.fill" catalog="system" selectedImage="doc.append.fill" id="9VE-Et-uwP"/>
+                    <navigationItem key="navigationItem" id="4dS-0e-IPT"/>
                     <connections>
                         <outlet property="tableView" destination="HUL-jK-WPI" id="Chl-BW-0xU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PP-U6-jSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4799.2366412213742" y="816.90140845070425"/>
+            <point key="canvasLocation" x="5725.9541984732823" y="816.90140845070425"/>
         </scene>
         <!--Account-->
         <scene sceneID="HaQ-l5-MEW">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kz-m0-Ws0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5776.3358778625952" y="816.90140845070425"/>
+            <point key="canvasLocation" x="6703.0534351145034" y="816.90140845070425"/>
         </scene>
         <!--People-->
         <scene sceneID="2lL-HL-bn4">
@@ -489,6 +489,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSX-Vw-GEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2855.7251908396947" y="1568.3098591549297"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="wTv-On-J2p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lo1-5x-ISu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="doc.append.fill" catalog="system" selectedImage="doc.append.fill" id="9VE-Et-uwP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iD6-21-NeN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6V0-Yj-POp" kind="relationship" relationship="rootViewController" id="564-yn-e86"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uli-ua-q01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4799.2366412213742" y="816.90140845070425"/>
         </scene>
     </scenes>
     <designables>

@@ -12,4 +12,5 @@ final class UserModel: NSObject {
     var profileImageUrl: String?
     var userName: String?
     var uid: String?
+    var pushToken: String?
 }

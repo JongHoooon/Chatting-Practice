@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import ObjectMapper
+import Alamofire
 
 final class ChatViewController: BaseViewController {
     
@@ -17,7 +18,7 @@ final class ChatViewController: BaseViewController {
     var uid: String = Auth.auth().currentUser?.uid ?? ""
     var chatRoomUid: String?
     var comments: [Comment] = []
-    var userModel: UserModel?
+    var destinationUserModel: UserModel?
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -162,10 +163,46 @@ private extension ChatViewController {
                             return
                         }
                         
+                        self.sendGcm()
                         self.messageTextField.text = ""
                 })
         }
         
+    }
+    
+    func sendGcm() {
+        
+        let url = "https://fcm.googleapis.com/fcm/send"
+        
+        let header: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "key=AAAA5IMbg5c:APA91bHIdEXe36f-r1MAPzcDISQC_6bdFuaCKFXWri4OWf1XpbNMLD84DeTf6nkrO3BjEN_y9JAye7W1jTqwRr30BOY-OEmY8utvyw_-dIkZL4dBiZnSJxPzA5P4jQ0QdcuqcBySF_lp"
+        ]
+        
+        var notificationModel = NotificationModel()
+        notificationModel.to = destinationUserModel?.pushToken ?? ""
+        notificationModel.notification.title = "보낸이 아이디"
+        notificationModel.notification.text = messageTextField.text ?? ""
+        
+        print("------------------------")
+        print(notificationModel.to)
+        print(notificationModel.notification.title)
+        print(notificationModel.notification.text)
+        
+        let params = notificationModel.toJSON()
+        
+        AF.request(
+            url,
+            method: .post,
+            parameters: params,
+            encoding: JSONEncoding.default,
+            headers: header
+        )
+        .responseJSON(completionHandler: { response in
+            print("-----------------------------------")
+            print(response.value)
+        })
+        .resume()
     }
     
     func checkChatRoom() {
@@ -204,8 +241,8 @@ private extension ChatViewController {
                 with: { [weak self] dataSnapshot in
                     guard let self = self else { return }
                 
-                    self.userModel = UserModel()
-                    self.userModel?.setValuesForKeys(dataSnapshot.value as! [String: Any])
+                    self.destinationUserModel = UserModel()
+                    self.destinationUserModel?.setValuesForKeys(dataSnapshot.value as! [String: Any])
                     self.getMessageList()
             })
     }
@@ -272,11 +309,11 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             ) as! DestinationMessageCell
             
-            cell.nameLabel.text = userModel?.userName
+            cell.nameLabel.text = destinationUserModel?.userName
             
             
             
-            let url = URL(string: userModel?.profileImageUrl ?? "")
+            let url = URL(string: destinationUserModel?.profileImageUrl ?? "")
             URLSession.shared.dataTask(with: url!, completionHandler: { data, _, error in
                 
                 DispatchQueue.main.async {
